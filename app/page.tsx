@@ -1,7 +1,21 @@
-const projects: { name: string; description: string; link?: string }[] = [
+import Image from "next/image";
+
+const projects: { name: string; description: string; link?: string; images?: string[] }[] = [
   { name: "King of Couriers", description: "Collect-a-thon work-in-progress game." },
   { name: "Vile is the Flesh", description: "FnaF-inspired horror game. Also work-in-progress." },
-  { name: "WARMONGER:45", description: "32v32 FPS shooter inspired by Battlefield and Helldivers 2.", link: "https://store.steampowered.com/app/3512780/WARMONGER45/" },
+  {
+    name: "WARMONGER:45",
+    description: "32v32 FPS shooter inspired by Battlefield and Helldivers 2.",
+    link: "https://store.steampowered.com/app/3512780/WARMONGER45/",
+    images: [
+      "/images/wm45/warmonger45_0.jpg",
+      "/images/wm45/warmonger45_1.jpg",
+      "/images/wm45/warmonger45_2.jpg",
+      "/images/wm45/warmonger45_3.jpg",
+      "/images/wm45/warmonger45_4.jpg",
+      "/images/wm45/warmonger45_5.jpg",
+    ],
+  },
 ];
 
 export default function Home() {
@@ -35,6 +49,34 @@ export default function Home() {
             {projects.map((project, index) => (
               <li className="project" key={index}>
                 <h3>{project.name}</h3>
+                {project.images && (
+                  <div className="image-carousel" aria-label={`${project.name} images`}>
+                    <div className="image-track">
+                      <div className="image-set">
+                        {project.images.map((image, imageIndex) => (
+                          <Image
+                            key={image}
+                            src={image}
+                            alt={`${project.name} screenshot ${imageIndex + 1}`}
+                            width={960}
+                            height={540}
+                          />
+                        ))}
+                      </div>
+                      <div className="image-set" aria-hidden="true">
+                        {project.images.map((image) => (
+                          <Image
+                            key={image}
+                            src={image}
+                            alt=""
+                            width={960}
+                            height={540}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <p>{project.description}</p>
                 {project.link && (
                   <p>

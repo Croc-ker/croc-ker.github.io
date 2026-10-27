@@ -26,9 +26,11 @@ body {
 a {
   color: inherit;
   text-underline-offset: 3px;
+  transition: opacity 160ms ease;
 }
 
 a:hover {
+  opacity: 0.75;
   text-decoration-thickness: 2px;
 }
 
@@ -40,6 +42,7 @@ a:focus-visible {
 .page {
   width: min(100% - 40px, 680px);
   margin: 0 auto;
+  animation: page-appear 420ms ease-out both;
 }
 
 .site-header {
@@ -109,10 +112,46 @@ nav a {
   margin-top: 18px;
 }
 
+.project {
+  transition: transform 160ms ease;
+}
+
+.project:hover {
+  transform: translateX(2px);
+}
+
 .project h3 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
+}
+
+.image-carousel {
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.image-track,
+.image-set {
+  display: flex;
+  width: max-content;
+}
+
+.image-track {
+  animation: slide-right 36s linear infinite;
+}
+
+.image-set {
+  flex: 0 0 auto;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.image-set img {
+  width: min(70vw, 480px);
+  aspect-ratio: 16 / 9;
+  flex: 0 0 auto;
+  object-fit: cover;
 }
 
 .project p {
@@ -138,6 +177,28 @@ nav a {
   margin: 0;
 }
 
+@keyframes page-appear {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 420px) {
   .page {
     width: calc(100% - 32px);
@@ -152,5 +213,26 @@ nav a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .image-carousel {
+    overflow-x: auto;
+  }
+
+  .image-track {
+    animation: none;
+  }
+
+  .image-set[aria-hidden="true"] {
+    display: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
