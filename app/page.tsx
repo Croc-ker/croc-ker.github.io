@@ -1,11 +1,11 @@
-import Image from "next/image";
+import ImageCarousel from "./image-carousel";
 
 const projects: { name: string; description: string; link?: string; images?: string[] }[] = [
   { name: "King of Couriers", description: "Collect-a-thon work-in-progress game." },
-  { name: "Vile is the Flesh", description: "FnaF-inspired horror game. Also work-in-progress." },
+  { name: "Vile is the Flesh: Raze", description: "FnaF-inspired horror game. Also work-in-progress." },
   {
     name: "WARMONGER:45",
-    description: "32v32 FPS shooter inspired by Battlefield and Helldivers 2.",
+    description: "30v30 FPS shooter inspired by Battlefield and Helldivers 2.",
     link: "https://store.steampowered.com/app/3512780/WARMONGER45/",
     images: [
       "/images/wm45/warmonger45_0.jpg",
@@ -33,7 +33,7 @@ export default function Home() {
 
       <main>
         <section className="intro" id="home">
-          <h1>I&apos;m Wyatt Crocker.</h1>
+          <h1>I'm Wyatt Crocker.</h1>
           <p>I develop software and games.</p>
         </section>
 
@@ -50,32 +50,7 @@ export default function Home() {
               <li className="project" key={index}>
                 <h3>{project.name}</h3>
                 {project.images && (
-                  <div className="image-carousel" aria-label={`${project.name} images`}>
-                    <div className="image-track">
-                      <div className="image-set">
-                        {project.images.map((image, imageIndex) => (
-                          <Image
-                            key={image}
-                            src={image}
-                            alt={`${project.name} screenshot ${imageIndex + 1}`}
-                            width={960}
-                            height={540}
-                          />
-                        ))}
-                      </div>
-                      <div className="image-set" aria-hidden="true">
-                        {project.images.map((image) => (
-                          <Image
-                            key={image}
-                            src={image}
-                            alt=""
-                            width={960}
-                            height={540}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                  <ImageCarousel images={project.images} label={project.name} />
                 )}
                 <p>{project.description}</p>
                 {project.link && (
