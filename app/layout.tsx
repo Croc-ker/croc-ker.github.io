@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
+// @ts-expect-error
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Croc-ker — Developer & Designer",
+  title: "Wyatt Crocker, Software Engineer & Game Developer",
   description:
-    "The personal portfolio of Croc-ker — building thoughtful digital experiences for the web.",
-  metadataBase: new URL("https://croc-ker.github.io"),
+    "Wyatt Crocker's portfolio.",
   openGraph: {
-    title: "Croc-ker — Developer & Designer",
+    title: "Wyatt Crocker, Software Engineer & Game Developer",
     description:
-      "Building thoughtful digital experiences for the web. Take a look at selected work and say hello.",
-    url: "https://croc-ker.github.io",
-    siteName: "Croc-ker",
+      "hi am wyatt i make things",
+    siteName: "Wyatt Crocker",
     type: "website",
   },
 };

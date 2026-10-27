@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
   font-family: Arial, Helvetica, sans-serif;
-  color: #171717;
-  background: #fff;
+  color: #d1b5e4;
+  background: #1c1724;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -79,7 +79,7 @@ nav a {
 
 .intro p {
   margin: 12px 0 0;
-  color: #555;
+  color: #ffffff;
   font-size: 18px;
 }
 
@@ -117,12 +117,12 @@ nav a {
 
 .project p {
   margin: 2px 0 0;
-  color: #555;
+  color: #ffffff;
 }
 
 .hint {
   margin-top: 18px !important;
-  color: #777;
+  color: #ffffff;
   font-size: 13px;
 }
 
