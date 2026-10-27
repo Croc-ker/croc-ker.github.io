@@ -1,4 +1,4 @@
-const projects = [
+const projects: { name: string; description: string; link?: string }[] = [
   { name: "King of Couriers", description: "Collect-a-thon work-in-progress game." },
   { name: "Vile is the Flesh", description: "FnaF-inspired horror game. Also work-in-progress." },
   { name: "WARMONGER:45", description: "32v32 FPS shooter inspired by Battlefield and Helldivers 2.", link: "https://store.steampowered.com/app/3512780/WARMONGER45/" },
@@ -19,7 +19,7 @@ export default function Home() {
 
       <main>
         <section className="intro" id="home">
-          <h1>I'm Wyatt Crocker.</h1>
+          <h1>I&apos;m Wyatt Crocker.</h1>
           <p>I develop software and games.</p>
         </section>
 
