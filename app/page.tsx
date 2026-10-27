@@ -33,7 +33,7 @@ export default function Home() {
 
       <main>
         <section className="intro" id="home">
-          <h1>I'm Wyatt Crocker.</h1>
+          <h1>I am Wyatt Crocker.</h1>
           <p>I develop software and games.</p>
         </section>
 
