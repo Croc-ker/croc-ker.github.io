@@ -82,7 +82,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <p>© {new Date().getFullYear()} Croc-ker</p>
+        <p>© 2026 Croc-ker</p>
       </footer>
     </div>
   );

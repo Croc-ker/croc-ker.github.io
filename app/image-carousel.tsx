@@ -63,7 +63,6 @@ export default function ImageCarousel({ images, label }: ImageCarouselProps) {
         <button
           className="carousel-arrow carousel-arrow--previous"
           type="button"
-          aria-label="Previous screenshot"
           disabled={activeIndex === 0}
           onClick={showPreviousImage}
         >
@@ -90,7 +89,6 @@ export default function ImageCarousel({ images, label }: ImageCarouselProps) {
         <button
           className="carousel-arrow carousel-arrow--next"
           type="button"
-          aria-label="Next screenshot"
           disabled={activeIndex === images.length - 1}
           onClick={showNextImage}
         >
